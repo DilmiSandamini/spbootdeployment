@@ -1,10 +1,8 @@
 package lk.ijse.gdse72.spbootdeployment.controller;
 
+import jakarta.validation.Valid;
 import lk.ijse.gdse72.spbootdeployment.entity.Customer;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/customer")
@@ -16,7 +14,7 @@ public class CustomerController {
     }
 
     @PostMapping("/create")
-    public Customer saveCustomer(Customer customer) {
+    public Customer saveCustomer( @RequestBody @Valid Customer customer) {
         return customer;
     }
 }
